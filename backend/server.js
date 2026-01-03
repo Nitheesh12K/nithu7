@@ -7,8 +7,15 @@ import memberRoutes from './routes/members.js';
 const app = express();
 const PORT = 5000;
 
-app.use(cors());
+// Enable CORS for all routes
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 initializeDatabase();
 

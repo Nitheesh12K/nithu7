@@ -25,11 +25,7 @@ export default function JoinForm() {
     setMessage('')
 
     try {
-      const apiUrl = window.location.hostname === 'localhost' 
-        ? 'http://localhost:5000/api/members/join'
-        : 'http://localhost:5000/api/members/join';
-      
-      const response = await fetch(apiUrl, {
+      const response = await fetch('http://localhost:5000/api/members/join', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
