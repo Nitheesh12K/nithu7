@@ -5,7 +5,7 @@ import { initializeDatabase } from './db.js';
 import memberRoutes from './routes/members.js';
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 3001;
 
 // Enable CORS for all routes
 app.use(cors({
